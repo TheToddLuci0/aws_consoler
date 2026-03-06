@@ -69,7 +69,7 @@ def run(args: argparse.Namespace) -> str:
         # for the largest set of possible permissions.
         try:
             resp = sts.get_federation_token(
-                Name="aws_consoler",
+                Name= args.name if args.name is not None else "aws_consoler",
                 PolicyArns=[
                     {"arn": "arn:aws:iam::aws:policy/AdministratorAccess"}
                 ])

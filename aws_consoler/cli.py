@@ -73,6 +73,9 @@ def main(argv=sys.argv[1:]):
     gen_grp.add_argument(
         "-v", "--verbose", action="count",
         help="Verbosity, repeat for more verbose output (up to 3)")
+    gen_grp.add_argument(
+        "-n", "--name", default="aws_consoler",
+        help="Name to use when getting the federation token.")
     logger.debug("General group ready.")
 
     adv_grp = parser.add_argument_group(title="Advanced arguments")
